@@ -1,1 +1,13 @@
-<p>navbar works!</p>
+<div class="navbar">
+    <p>next jobs</p>
+    <div class="buttons">
+        <app-icon-button [message] = "buttons['loginButton'].message" 
+                [color] = "buttons['loginButton'].color"
+                [textColor] = "buttons['loginButton'].textColor"
+                [icon] = "buttons['loginButton'].icon"></app-icon-button>
+        <app-icon-button [message] = "buttons['signUpButton'].message" 
+                [color] = "buttons['signUpButton'].color"
+                [textColor] = "buttons['signUpButton'].textColor"
+                [icon] = "buttons['signUpButton'].icon"></app-icon-button>
+    </div>
+</div>

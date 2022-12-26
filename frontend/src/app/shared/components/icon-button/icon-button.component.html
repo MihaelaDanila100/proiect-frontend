@@ -1,1 +1,7 @@
-<p>icon-button works!</p>
+<button class="button"
+        [style.background-color] = "color"
+        [style.color] = "textColor"
+        [style.border-color] = "textColor">
+        <mat-icon>{{ icon }}</mat-icon>
+        <span class="text">{{ message }}</span>
+</button>

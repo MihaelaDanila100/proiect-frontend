@@ -4,7 +4,7 @@ import { IconButtonComponent } from './components/icon-button/icon-button.compon
 import { FullLayoutComponent } from './components/full-layout/full-layout.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
-
+import { MatIconModule } from '@angular/material/icon'
 
 
 @NgModule({
@@ -15,7 +15,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MatIconModule
   ],
   exports: [
     FullLayoutComponent
