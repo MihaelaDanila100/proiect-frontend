@@ -5,7 +5,10 @@
     <div class = "col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 pannel">
 
         <div class = "row">
-            <app-option-card class = "col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" *ngFor = "let option of workCategories"></app-option-card>
+            <app-option-card class = "col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" 
+                *ngFor = "let option of workCategories"
+                [text] = "option.name"
+                [image] = "option.image"></app-option-card>
         </div>
 
         <div class = "row jobs">

@@ -1,1 +1,6 @@
-<p>option-card works!</p>
+<div class="card">
+    <mat-checkbox>
+        <img [src] = "image" class="card-image" *ngIf="image">
+        <p class="message">{{ text }}</p>
+    </mat-checkbox>
+</div>

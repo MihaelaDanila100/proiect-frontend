@@ -1,0 +1,22 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(211, 211, 211, 0.2), 0 6px 20px 0 rgba(193, 192, 192, 0.19);
+    padding: 5px 10px;
+    min-width: 150px;
+}
+
+.message {
+    font-weight: 500;
+    font-size: 13px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+}
+
+:host ::ng-deep .mat-checkbox .mat-checkbox-layout .mat-checkbox-inner-container {
+    left: 100% !important;
+}
+
+.card-image {
+    width: 65px;
+    height: 55px;
+    float: left;
+}

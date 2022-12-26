@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WORKFORM } from 'src/app/shared/data/enums/work-form';
+import { WORKFORM } from 'src/app/shared/data/consts/work-form';
 
 @Component({
   selector: 'app-jobs-pannel',
@@ -8,7 +8,7 @@ import { WORKFORM } from 'src/app/shared/data/enums/work-form';
 })
 export class JobsPannelComponent implements OnInit {
 
-  public workCategories = Object.values(WORKFORM);
+  public workCategories:any = Object.values(WORKFORM);
 
   constructor() { }
 
