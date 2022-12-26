@@ -5,13 +5,15 @@ import { FullLayoutComponent } from './components/full-layout/full-layout.compon
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon'
+import { ShortenArrayPipe } from './pipes/shorten-array.pipe';
 
 
 @NgModule({
   declarations: [
     IconButtonComponent,
     NavbarComponent,
-    FullLayoutComponent
+    FullLayoutComponent,
+    ShortenArrayPipe
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { MatIconModule } from '@angular/material/icon'
     MatIconModule
   ],
   exports: [
-    FullLayoutComponent
+    FullLayoutComponent,
+    ShortenArrayPipe
   ]
 })
 export class SharedModule { }

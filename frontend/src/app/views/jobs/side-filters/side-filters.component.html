@@ -1,1 +1,15 @@
-<p>side-filters works!</p>
+<div class="container">
+    <div class="row header">
+        <p class="filter col-6">Filter By</p>
+        <p class="reset col-6">Reset</p>
+    </div>
+    <hr>
+    <app-filter-section [options] = "domainsOptions"
+        [title] = "'Domain'"
+        [showSearch] = "true"></app-filter-section>
+    <app-filter-section [options] = "locationOptions"
+        [title] = "'Location'"
+        [showSearch] = "true"></app-filter-section>
+    <!-- <app-filter-section [options] = "experienceOptions"
+        [title] = "'Experience'"></app-filter-section> -->
+</div>

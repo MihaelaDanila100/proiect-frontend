@@ -1,1 +1,13 @@
-<p>filter-section works!</p>
+<p class="chapter">{{ title }}</p>
+<div>
+    <mat-checkbox *ngFor = "let option of options | shorten"
+        class="option">
+        {{ option.name ? option.name : option }}
+    </mat-checkbox>
+    <mat-form-field appearance="outline" *ngIf = "showSearch">
+        <mat-label>Search {{ title }}</mat-label>
+        <input matInput placeholder="Type">
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <hr>
+</div>
