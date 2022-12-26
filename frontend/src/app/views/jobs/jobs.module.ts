@@ -6,6 +6,7 @@ import { JobsPannelComponent } from './jobs-pannel/jobs-pannel.component';
 import { SideFiltersComponent } from './side-filters/side-filters.component';
 import { JobCardComponent } from './job-card/job-card.component';
 import { FilterSectionComponent } from './filter-section/filter-section.component';
+import { OptionCardComponent } from './option-card/option-card.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FilterSectionComponent } from './filter-section/filter-section.componen
     JobsPannelComponent,
     SideFiltersComponent,
     JobCardComponent,
-    FilterSectionComponent
+    FilterSectionComponent,
+    OptionCardComponent
   ],
   imports: [
     CommonModule,

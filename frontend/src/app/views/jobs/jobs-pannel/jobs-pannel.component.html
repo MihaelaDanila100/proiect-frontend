@@ -1,1 +1,20 @@
-<p>jobs-pannel works!</p>
+<div class = "row">
+    
+    <app-side-filters class = "col-md-2 col-lg-2 col-xl-2"></app-side-filters>
+
+    <div class = "col-md-10 col-lg-10 col-xl-10 pannel">
+
+        <div class = "row">
+            <app-option-card class = "col-md-2 col-lg-2 col-xl-2" *ngFor = "let option of workCategories"></app-option-card>
+        </div>
+
+        <div class = "row jobs">
+            <app-job-card class="col-md-3 col-lg-3 col-xl-3"></app-job-card>
+            <app-job-card class="col-md-3 col-lg-3 col-xl-3"></app-job-card>
+            <app-job-card class="col-md-3 col-lg-3 col-xl-3"></app-job-card>
+            <app-job-card class="col-md-3 col-lg-3 col-xl-3"></app-job-card>
+            <app-job-card class="col-md-3 col-lg-3 col-xl-3"></app-job-card>
+            <app-job-card class="col-md-3 col-lg-3 col-xl-3"></app-job-card>
+        </div>
+    </div>
+</div>
