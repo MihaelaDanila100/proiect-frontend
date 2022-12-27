@@ -1,6 +1,8 @@
 <div class="card">
     <mat-checkbox>
-        <img [src] = "image" class="card-image" *ngIf="image">
-        <p class="message">{{ text }}</p>
+        <div>
+            <img [src] = "image" class="card-image" *ngIf="image">
+            <p class="message">{{ text }}</p>
+        </div>
     </mat-checkbox>
 </div>

@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { ShortenArrayPipe } from 'src/app/shared/pipes/shorten-array.pipe';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MatExpansionModule } from '@angular/material/expansion'
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    MatExpansionModule,
     SharedModule
   ],
   providers: [
