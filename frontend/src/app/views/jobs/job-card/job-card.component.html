@@ -2,23 +2,25 @@
     <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
             <mat-panel-title>
-              dada
+              <img *ngIf = "data.imagePath" [src] = "data.imagePath" class="job-image">
+              {{ data.name }}
             </mat-panel-title>
             <mat-panel-description>
-             ddaa
+                <mat-icon class="clock-icon">access_time</mat-icon>{{ data.startDate | timepassed }} months ago
+                <mat-icon class="mark-icon">bookmark_border</mat-icon>
             </mat-panel-description>
           </mat-expansion-panel-header>
     </mat-expansion-panel>
 
     <mat-expansion-panel>
           <mat-expansion-panel-header>
-          <mat-panel-title>
-              daaa
-          </mat-panel-title>
-          <mat-panel-description>
-              ssss
-          </mat-panel-description>
+            <mat-panel-title>
+                {{ data.experience }}
+            </mat-panel-title>
+            <mat-panel-description>
+                <p>{{ data.description | shortentext:10 }}</p>
+            </mat-panel-description>
           </mat-expansion-panel-header>
-          <p>iiii</p>
+          <a>See details</a>
       </mat-expansion-panel>
 </mat-accordion>

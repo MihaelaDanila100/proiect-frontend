@@ -12,12 +12,9 @@
         </div>
 
         <div class = "row jobs">
-            <app-job-card class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"></app-job-card>
-            <app-job-card class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"></app-job-card>
-            <app-job-card class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"></app-job-card>
-            <app-job-card class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"></app-job-card>
-            <app-job-card class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"></app-job-card>
-            <app-job-card class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"></app-job-card>
+            <app-job-card class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 job-card"
+                *ngFor = "let job of jobs"
+                [data] = "job"></app-job-card>
         </div>
     </div>
 </div>

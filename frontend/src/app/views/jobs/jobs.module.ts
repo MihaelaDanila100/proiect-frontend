@@ -14,6 +14,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { ShortenArrayPipe } from 'src/app/shared/pipes/shorten-array.pipe';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatExpansionModule } from '@angular/material/expansion'
+import { TimePassedPipe } from 'src/app/shared/pipes/time-passed.pipe';
+import { MatChipsModule } from '@angular/material/chips';
+import { ShortenTextPipe } from 'src/app/shared/pipes/shorten-text.pipe';
 
 @NgModule({
   declarations: [
@@ -31,10 +34,13 @@ import { MatExpansionModule } from '@angular/material/expansion'
     MatInputModule,
     MatIconModule,
     MatExpansionModule,
+    MatChipsModule,
     SharedModule
   ],
   providers: [
-    ShortenArrayPipe
+    ShortenArrayPipe,
+    TimePassedPipe,
+    ShortenTextPipe
   ]
 })
 export class JobsModule { }

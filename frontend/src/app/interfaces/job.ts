@@ -4,6 +4,6 @@ import { Location } from "./location";
 import { Skill } from "./skill";
 
 export interface Job {
-    id: string;
+    id: number;
     name: string;
 }

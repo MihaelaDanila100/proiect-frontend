@@ -6,6 +6,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon'
 import { ShortenArrayPipe } from './pipes/shorten-array.pipe';
+import { TimePassedPipe } from './pipes/time-passed.pipe';
+import { ShortenTextPipe } from './pipes/shorten-text.pipe';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { ShortenArrayPipe } from './pipes/shorten-array.pipe';
     IconButtonComponent,
     NavbarComponent,
     FullLayoutComponent,
-    ShortenArrayPipe
+    ShortenArrayPipe,
+    TimePassedPipe,
+    ShortenTextPipe
   ],
   imports: [
     CommonModule,
@@ -22,7 +26,9 @@ import { ShortenArrayPipe } from './pipes/shorten-array.pipe';
   ],
   exports: [
     FullLayoutComponent,
-    ShortenArrayPipe
+    ShortenArrayPipe,
+    TimePassedPipe,
+    ShortenTextPipe
   ]
 })
 export class SharedModule { }
