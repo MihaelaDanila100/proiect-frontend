@@ -32,5 +32,6 @@ module.exports.logIn = (connection, response, request) => {
                 }
             });
         }
+        return response.status(404).json({message:"The user doesn't exist!"});
     });
 }
