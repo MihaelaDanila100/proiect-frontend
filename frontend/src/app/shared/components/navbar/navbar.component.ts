@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
   openLogInDialog(): void {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '600px';
-    dialogConfig.height = '40vh';
+    dialogConfig.height = '43vh';
     const dialogRef = this.matDialog.open(LoginPopupComponent, dialogConfig);
     dialogRef.afterClosed().subscribe((data) => {
       if(data === "signup") this.openSignUpDialog();

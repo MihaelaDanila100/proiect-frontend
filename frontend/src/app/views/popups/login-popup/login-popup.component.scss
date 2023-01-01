@@ -38,6 +38,14 @@
     cursor: pointer;
 }
 
+.up {
+    z-index: 5000;
+}
+
+.wrong-text {
+    color: red;
+}
+
 .wrong {
     background-color: rgba(247, 83, 83, 0.858);
     color: white;

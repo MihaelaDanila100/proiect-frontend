@@ -21,6 +21,7 @@ export class LoginPopupComponent implements OnInit {
       password: new FormControl(null, Validators.required)
     });
     public invalidForm: boolean = false;
+    public error!: string;
 
   ngOnInit(): void {
   }
@@ -42,16 +43,21 @@ export class LoginPopupComponent implements OnInit {
           localStorage.setItem('user-id', res.id);
           this.closePopUp();
         } else {
-          console.log("ress ", res.message)
+          this.error = res.message;
         }
       }, (err) => {
-        console.log("errr", err)
+        let error = 'Something went wrong';
+        if(err.error.message) {
+          error = err.error.message;
+        }
+        this.error = error;
       });
     }
   }
 
   resetForm(): void {
     this.invalidForm = false;
+    this.error = '';
   }
 
 }
