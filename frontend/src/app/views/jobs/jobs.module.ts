@@ -7,16 +7,11 @@ import { SideFiltersComponent } from './side-filters/side-filters.component';
 import { JobCardComponent } from './job-card/job-card.component';
 import { FilterSectionComponent } from './filter-section/filter-section.component';
 import { OptionCardComponent } from './option-card/option-card.component';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
 import { ShortenArrayPipe } from 'src/app/shared/pipes/shorten-array.pipe';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { MatExpansionModule } from '@angular/material/expansion'
 import { TimePassedPipe } from 'src/app/shared/pipes/time-passed.pipe';
-import { MatChipsModule } from '@angular/material/chips';
 import { ShortenTextPipe } from 'src/app/shared/pipes/shorten-text.pipe';
+import { MaterialModule } from 'src/app/shared/material/material.module';
 
 @NgModule({
   declarations: [
@@ -29,13 +24,8 @@ import { ShortenTextPipe } from 'src/app/shared/pipes/shorten-text.pipe';
   imports: [
     CommonModule,
     JobsRoutingModule,
-    MatCheckboxModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatExpansionModule,
-    MatChipsModule,
-    SharedModule
+    SharedModule,
+    MaterialModule
   ],
   providers: [
     ShortenArrayPipe,

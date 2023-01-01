@@ -1,0 +1,45 @@
+.pointer {
+    cursor: pointer;
+}
+
+.flex-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.btn {
+    width: 50%;
+    border-radius: 0px;
+}
+
+.flex-center {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.title {
+    font-weight: 500;
+}
+
+.input-group-text {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.link {
+    margin-top: 10px;
+    text-decoration: underline;
+    color: rgb(169, 169, 169);
+    cursor: pointer;
+}
+
+.wrong {
+    background-color: rgba(247, 83, 83, 0.858);
+    color: white;
+    border: solid 1px red;
+}

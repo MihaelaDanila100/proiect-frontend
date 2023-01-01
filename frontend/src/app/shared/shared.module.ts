@@ -8,6 +8,8 @@ import { MatIconModule } from '@angular/material/icon'
 import { ShortenArrayPipe } from './pipes/shorten-array.pipe';
 import { TimePassedPipe } from './pipes/time-passed.pipe';
 import { ShortenTextPipe } from './pipes/shorten-text.pipe';
+import { PopupsModule } from '../views/popups/popups.module';
+import { MaterialModule } from './material/material.module';
 
 
 @NgModule({
@@ -22,7 +24,7 @@ import { ShortenTextPipe } from './pipes/shorten-text.pipe';
   imports: [
     CommonModule,
     RouterModule,
-    MatIconModule
+    MaterialModule
   ],
   exports: [
     FullLayoutComponent,

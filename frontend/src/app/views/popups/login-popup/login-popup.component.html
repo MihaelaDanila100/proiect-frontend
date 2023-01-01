@@ -1,0 +1,34 @@
+<div class="flex-container">
+    <mat-icon class="pointer" (click) = "closePopUp()">close</mat-icon>
+</div>
+
+<h1 class="title">Log In</h1>
+<form [formGroup] = "loginForm">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="username1">
+                <mat-icon>perm_identity</mat-icon>
+            </span>
+        </div>
+        <input formControlName = "username" 
+            [ngClass] = "this.loginForm.controls['username'].hasError('required')  && invalidForm === true ? 'wrong' : ''" 
+            type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="username">
+    </div>
+    
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="password">
+                <mat-icon>vpn_key</mat-icon>
+            </span>
+        </div>
+        <input formControlName = "password" 
+            [ngClass] = "this.loginForm.controls['password'].hasError('required')  && invalidForm === true ? 'wrong' : ''" 
+            type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password">
+    </div>
+
+    <div class="flex-center">
+        <button (click) = "sendForm()" class="btn btn-primary">Log In</button>
+        <button (click) = "resetForm()" type="reset" class="btn btn-danger">Reset</button>
+    </div>
+    <p class="link" (click) = "openSignUpPopup()">Don't have an account? Sign up here</p>
+</form>
