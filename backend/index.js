@@ -5,6 +5,7 @@ const db_config = require('./db.config');
 const mysql = require('mysql2');
 const skills_controller = require('./skills');
 const locations_controller = require('./locations');
+const auth = require('./auth');
 
 var app = express();
 
@@ -22,6 +23,10 @@ connection.connect(function(error){
         });
     }
 });
+
+app.post('/auth/login/', function(req, res) {
+    auth.logIn(connection, res, req.body);
+})
 
 app.get('/skills/', function (req, res) {
     skills_controller.getAllSkills(connection, res);
