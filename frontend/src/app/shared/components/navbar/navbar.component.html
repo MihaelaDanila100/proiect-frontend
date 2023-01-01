@@ -5,11 +5,19 @@
                 [color] = "buttons['loginButton'].color"
                 [textColor] = "buttons['loginButton'].textColor"
                 [icon] = "buttons['loginButton'].icon"
-                (click) = "openLogInDialog()"></app-icon-button>
+                (click) = "openLogInDialog()"
+                *ngIf = "!isLogged()"></app-icon-button>
         <app-icon-button [message] = "buttons['signUpButton'].message" 
                 [color] = "buttons['signUpButton'].color"
                 [textColor] = "buttons['signUpButton'].textColor"
                 [icon] = "buttons['signUpButton'].icon"
-                (click) = "openSignUpDialog()"></app-icon-button>
+                (click) = "openSignUpDialog()"
+                *ngIf = "!isLogged()"></app-icon-button>
+        <app-icon-button [message] = "buttons['logOutButton'].message" 
+                [color] = "buttons['logOutButton'].color"
+                [textColor] = "buttons['logOutButton'].textColor"
+                [icon] = "buttons['logOutButton'].icon"
+                (click) = "delog()"
+                *ngIf = "isLogged()"></app-icon-button>
     </div>
 </div>

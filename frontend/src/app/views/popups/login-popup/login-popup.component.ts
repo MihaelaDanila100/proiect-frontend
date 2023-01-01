@@ -37,7 +37,15 @@ export class LoginPopupComponent implements OnInit {
     this.invalidForm = !this.loginForm.valid;
     if(this.loginForm.valid) {
       this.authService.executeLogIn(this.loginForm.value).subscribe((res) => {
-        console.log(res);
+        if(res.id) {
+          localStorage.setItem('account-type', res.type);
+          localStorage.setItem('user-id', res.id);
+          this.closePopUp();
+        } else {
+          console.log("ress ", res.message)
+        }
+      }, (err) => {
+        console.log("errr", err)
       });
     }
   }

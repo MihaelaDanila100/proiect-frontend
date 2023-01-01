@@ -10,5 +10,11 @@ export const NavbarButtons = {
         color: '#0a0b2b',
         icon: 'how_to_reg',
         textColor: 'white'
+    },
+    logOutButton: {
+        message: 'Log Out',
+        color: '#0a0b2b',
+        icon: 'exit_to_app',
+        textColor: 'white'
     }
 }

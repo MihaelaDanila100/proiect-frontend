@@ -39,4 +39,14 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  delog(): void {
+    localStorage.removeItem('account-type');
+    localStorage.removeItem('user-id');
+  }
+
+  isLogged(): boolean {
+    if(localStorage.getItem('user-id')) return true;
+    return false;
+  }
+
 }

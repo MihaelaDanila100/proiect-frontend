@@ -10,7 +10,8 @@ import { TimePassedPipe } from './pipes/time-passed.pipe';
 import { ShortenTextPipe } from './pipes/shorten-text.pipe';
 import { PopupsModule } from '../views/popups/popups.module';
 import { MaterialModule } from './material/material.module';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RequestInterceptor } from '../core/interceptors/request.interceptor';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,17 @@ import { MaterialModule } from './material/material.module';
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   exports: [
     FullLayoutComponent,
     ShortenArrayPipe,
     TimePassedPipe,
     ShortenTextPipe
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true }
   ]
 })
 export class SharedModule { }
