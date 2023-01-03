@@ -26,7 +26,11 @@ connection.connect(function(error){
 
 app.post('/auth/login/', function(req, res) {
     auth.logIn(connection, res, req.body);
-})
+});
+
+app.post('/auth/signup/', function(req, res) {
+    auth.signUp(connection, res, req.body);
+});
 
 app.get('/skills/', function (req, res) {
     skills_controller.getAllSkills(connection, res);
