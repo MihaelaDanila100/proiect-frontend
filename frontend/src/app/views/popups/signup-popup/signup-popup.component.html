@@ -1,1 +1,71 @@
-<p (click) = "closePopUp()">signup-popup works!</p>
+<div class="flex-container">
+    <mat-icon class="pointer" (click) = "closePopUp()">close</mat-icon>
+</div>
+
+<h1>Sign Up</h1>
+
+<p-steps [model] = "signUpFields"  
+    [(activeIndex)] = "currentIndex"
+    [readonly] = "false"></p-steps>
+
+<form class="form" [formGroup] = "signUpForm">
+    <div *ngIf = "currentIndex === 0">
+        <p class="form-label">Username</p>
+        <mat-form-field appearance="outline">
+            <input matInput placeholder="Placeholder" formControlName = "username">
+        </mat-form-field>
+        <br>
+        <p class="form-label">Password</p>
+        <mat-form-field appearance="outline">
+            <input matInput placeholder="Placeholder" type="password" formControlName = "password">
+        </mat-form-field>
+    </div>
+    
+    <div *ngIf = "currentIndex === 1">
+        <p class="form-label">Email</p>
+        <mat-form-field appearance="outline">
+            <input matInput placeholder="Placeholder" formControlName = "mail">
+        </mat-form-field>
+        <br>
+        <p class="form-label">Account Type</p>
+        <div class="option-list">
+            <mat-checkbox *ngFor = "let option of options" [formControlName] = "option | lowercase">
+                {{ option }}
+            </mat-checkbox>
+        </div>
+    </div>
+    
+    <div *ngIf = "currentIndex === 2">
+        <p class="form-label">Full name</p>
+        <mat-form-field appearance="outline">
+            <input matInput placeholder="Placeholder" formControlName = "mail">
+        </mat-form-field>
+
+        <div *ngIf = "signUpForm.value.recruiter">
+            <p class="form-label">Company</p>
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="Placeholder" formControlName = "company">
+            </mat-form-field>
+        </div>
+
+        <div *ngIf = "signUpForm.value.candidate">
+            <p class="form-label">Company</p>
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="Placeholder" 
+                    formControlName = "skills"
+                    [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of skills" [value]="option.name">
+                        {{option.name}}
+                    </mat-option>
+                    </mat-autocomplete>
+            </mat-form-field>
+        </div>
+    </div>
+    
+    <div class="flex-center">
+        <button (click) = "sendForm()" class="btn btn-primary">Log In</button>
+        <button (click) = "resetForm()" type="reset" class="btn btn-danger">Reset</button>
+    </div>
+    <p class="link" (click) = "openLogInPopUp()">Already have an account? Login here</p>
+</form>

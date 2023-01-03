@@ -5,6 +5,7 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
 import { SignupPopupComponent } from './signup-popup/signup-popup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ToastModule} from 'primeng/toast';
+import {StepsModule} from 'primeng/steps';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {ToastModule} from 'primeng/toast';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastModule
+    ToastModule,
+    StepsModule
   ]
 })
 export class PopupsModule { }

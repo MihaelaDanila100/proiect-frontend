@@ -1,0 +1,58 @@
+.flex-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.btn {
+    width: 50%;
+    border-radius: 0px;
+}
+
+.flex-center {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+:host ::ng-deep .mat-form-field .mat-form-field-infix {
+    border: solid 0px black !important;
+    width: 100% !important;
+}
+
+.title {
+    font-weight: 500;
+}
+
+.input-group-text {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.link {
+    margin-top: 10px;
+    text-decoration: underline;
+    color: rgb(169, 169, 169);
+    cursor: pointer;
+}
+
+.up {
+    z-index: 5000;
+}
+
+.wrong-text {
+    color: red;
+}
+
+.wrong {
+    background-color: rgba(247, 83, 83, 0.858);
+    color: white;
+    border: solid 1px red;
+}

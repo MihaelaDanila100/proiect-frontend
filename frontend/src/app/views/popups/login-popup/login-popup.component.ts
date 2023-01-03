@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login-popup',
   templateUrl: './login-popup.component.html',
-  styleUrls: ['./login-popup.component.scss'],
+  styleUrls: ['./login-popup.component.scss', '../../../shared/styles/form-style.scss'],
   providers: [FormBuilder]
 })
 export class LoginPopupComponent implements OnInit {
