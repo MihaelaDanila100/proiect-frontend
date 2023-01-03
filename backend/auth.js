@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 
 module.exports.logIn = (connection, response, request) => {
     let password = request.password;
+    let unfound = true;
     bcrypt.hash(password, 10, (err, hash) => {
         if(err) {
             response.status(500).json({message: "Something went wrong"});
@@ -12,6 +13,7 @@ module.exports.logIn = (connection, response, request) => {
             connection.query(qr, (err, result) => {
                 if(err) {
                     response.status(500).json({message: err});
+                    unfound = false;
                     throw Error(err);
                 }
                 if(result.length > 0) {
@@ -19,19 +21,23 @@ module.exports.logIn = (connection, response, request) => {
                     bcrypt.compare(res.password, hash, function (err, isMatch) {
                         if(err) {
                             response.status(500).json({message: "Something went wrong"});
+                            unfound = false;
                             throw Error(err);
                         }
                         if (isMatch){
+                            unfound = false;
                             if(table === 'candidates') response.status(200).json({id: res.id_candidate, type: 'candidate'});
                             else response.status(200).json({id: res.id_recruiter, type: 'recruiter'});
                             return;
                         } 
+                        unfound = false;
                         response.status(200).json({message: "Wrong username or password"});
                         return;
                     });
                 }
             });
         }
-        return response.status(404).json({message:"The user doesn't exist!"});
+        if(unfound) return response.status(404).json({message:"The user doesn't exist!"});
+        return;
     });
 }
