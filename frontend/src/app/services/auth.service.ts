@@ -19,5 +19,16 @@ export class AuthService {
     }
     return this.http.post(`${this.url}/login`, body);
   }
+
+  public executeSignUp(formData: any): Observable<any> {
+    if(formData.recruiter) formData.accountType = 'recruiters';
+    else formData.accountType = 'candidates';
+    return this.http.post(`${this.url}/signup`, formData).pipe(
+      (result: any) => {
+        result.type = formData.accountType;
+        return result;
+      }
+    );
+  }
   
 }

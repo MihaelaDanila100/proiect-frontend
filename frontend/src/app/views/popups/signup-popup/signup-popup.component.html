@@ -3,7 +3,7 @@
 </div>
 
 <h1>Sign Up</h1>
-
+<p class="wrong-text">{{ error }}</p>
 <p-steps [model] = "signUpFields"  
     [(activeIndex)] = "currentIndex"
     [readonly] = "false"></p-steps>
@@ -29,7 +29,8 @@
         <br>
         <p class="form-label">Account Type</p>
         <div class="option-list">
-            <mat-checkbox *ngFor = "let option of options" [formControlName] = "option | lowercase">
+            <mat-checkbox *ngFor = "let option of options" 
+                [formControlName] = "option | lowercase">
                 {{ option }}
             </mat-checkbox>
         </div>
@@ -38,27 +39,13 @@
     <div *ngIf = "currentIndex === 2">
         <p class="form-label">Full name</p>
         <mat-form-field appearance="outline">
-            <input matInput placeholder="Placeholder" formControlName = "mail">
+            <input matInput placeholder="Placeholder" formControlName = "fullName">
         </mat-form-field>
 
         <div *ngIf = "signUpForm.value.recruiter">
             <p class="form-label">Company</p>
             <mat-form-field appearance="outline">
                 <input matInput placeholder="Placeholder" formControlName = "company">
-            </mat-form-field>
-        </div>
-
-        <div *ngIf = "signUpForm.value.candidate">
-            <p class="form-label">Company</p>
-            <mat-form-field appearance="outline">
-                <input matInput placeholder="Placeholder" 
-                    formControlName = "skills"
-                    [matAutocomplete]="auto">
-                <mat-autocomplete #auto="matAutocomplete">
-                    <mat-option *ngFor="let option of skills" [value]="option.name">
-                        {{option.name}}
-                    </mat-option>
-                    </mat-autocomplete>
             </mat-form-field>
         </div>
     </div>
