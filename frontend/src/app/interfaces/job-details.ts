@@ -10,7 +10,7 @@ export interface JobDetail {
     location: Location;
     domain: Domain;
     experience: string;
-    startDate: string;
+    createdAt: string;
     skills: Skill[];
     benefits: Benefit[];
     imagePath?: string;
