@@ -37,6 +37,10 @@ app.get('/jobs/', function (req, res) {
     jobs_controller.getAllJobs(connection, res);
 });
 
+app.get('/jobs/filtered/', function (req, res) {
+    jobs_controller.getFilteredJobs(connection, res, req);
+});
+
 app.get('/skills/', function (req, res) {
     skills_controller.getAllSkills(connection, res);
 });
