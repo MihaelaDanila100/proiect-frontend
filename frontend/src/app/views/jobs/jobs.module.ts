@@ -12,6 +12,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { TimePassedPipe } from 'src/app/shared/pipes/time-passed.pipe';
 import { ShortenTextPipe } from 'src/app/shared/pipes/shorten-text.pipe';
 import { MaterialModule } from 'src/app/shared/material/material.module';
+import { JobsLayoutComponent } from './jobs-layout/jobs-layout.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
     SideFiltersComponent,
     JobCardComponent,
     FilterSectionComponent,
-    OptionCardComponent
+    OptionCardComponent,
+    JobsLayoutComponent
   ],
   imports: [
     CommonModule,

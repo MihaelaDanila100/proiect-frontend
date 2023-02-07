@@ -1,12 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { JobsLayoutComponent } from './jobs-layout/jobs-layout.component';
 import { JobsPannelComponent } from './jobs-pannel/jobs-pannel.component';
 
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    component: JobsPannelComponent
+    component: JobsLayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'pannel',
+        pathMatch: 'full'
+      }, {
+        path: 'pannel',
+        component: JobsPannelComponent
+      }
+    ]
   }
 ];
 
