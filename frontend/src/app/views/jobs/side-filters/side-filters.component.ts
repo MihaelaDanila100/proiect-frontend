@@ -4,6 +4,7 @@ import { DomainService } from 'src/app/services/domain.service';
 import { LocationService } from 'src/app/services/location.service';
 import { Location } from 'src/app/interfaces/location';
 import { Experience } from 'src/app/shared/data/consts/experience';
+import { FilterService } from 'src/app/services/filter.service';
 
 @Component({
   selector: 'app-side-filters',
@@ -25,7 +26,11 @@ export class SideFiltersComponent implements OnInit {
     });
     this.locationService.getLocations().subscribe((res) => {
       this.locationOptions = res;
-    })
+    });
+  }
+
+  changeLocation(event: any): void {
+    console.log("aha ", event)
   }
 
 }

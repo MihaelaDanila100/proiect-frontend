@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TimePassedPipe implements PipeTransform {
     transform(value: string) {
         let today = new Date();
-        console.log("vall ", value)
         if(value.includes("T")) value = value.split("T")[0];
         let givenDate = new Date(value);
         let months = (today.getFullYear() - givenDate.getFullYear()) * 12;

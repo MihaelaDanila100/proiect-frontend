@@ -1,34 +1,18 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Location } from '../interfaces/location';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocationService {
 
-  private locations: Location[] = [
-    {
-      id: 1,
-      name: 'Bucuresti'
-    },
-    {
-      id: 2,
-      name: 'Bucuresti'
-    },
-    {
-      id: 3,
-      name: 'Bucuresti'
-    },
-    {
-      id: 4,
-      name: 'Bucuresti'
-    },
-  ]
+  private url = `${environment.API_BASE_URl}/locations`;
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
-  public getLocations(): Observable<Location[]> {
-    return of(this.locations);
+  public getLocations(): Observable<any> {
+    return this.httpClient.get(this.url);
   }
 }

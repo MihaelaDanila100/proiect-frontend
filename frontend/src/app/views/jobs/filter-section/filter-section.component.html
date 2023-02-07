@@ -1,7 +1,8 @@
 <p class="chapter">{{ title }}</p>
 <div>
     <mat-checkbox *ngFor = "let option of options | shorten"
-        class="option">
+        class="option"
+        (change) = "updateFilters($event, option)">
         {{ option.name ? option.name : option }}
     </mat-checkbox>
     <mat-form-field appearance="outline" *ngIf = "showSearch">

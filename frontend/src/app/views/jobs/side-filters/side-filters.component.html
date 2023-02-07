@@ -9,7 +9,8 @@
         [showSearch] = "true"></app-filter-section>
     <app-filter-section [options] = "locationOptions"
         [title] = "'Location'"
-        [showSearch] = "true"></app-filter-section>
+        [showSearch] = "true"
+        (filterChanged) = "changeLocation($event)"></app-filter-section>
     <!-- <app-filter-section [options] = "experienceOptions"
         [title] = "'Experience'"></app-filter-section> -->
 </div>
